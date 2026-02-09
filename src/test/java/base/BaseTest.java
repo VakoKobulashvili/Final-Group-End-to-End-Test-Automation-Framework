@@ -4,6 +4,9 @@ import listeners.TestListener;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.*;
 import pages.HomePage;
+import io.restassured.RestAssured;
+import org.testng.annotations.BeforeClass;
+
 
 @Listeners(TestListener.class)
 public class BaseTest {
@@ -25,5 +28,9 @@ public class BaseTest {
     @AfterMethod(alwaysRun = true)
     public void tearDown() {
         DriverFactory.quitDriver();
+    }
+    @BeforeClass
+    public void setup() {
+        RestAssured.baseURI = "https://automationexercise.com/api";
     }
 }
