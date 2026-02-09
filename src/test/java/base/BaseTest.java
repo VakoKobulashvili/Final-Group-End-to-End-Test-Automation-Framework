@@ -29,8 +29,4 @@ public class BaseTest {
     public void tearDown() {
         DriverFactory.quitDriver();
     }
-    @BeforeClass
-    public void setup() {
-        RestAssured.baseURI = "https://automationexercise.com/api";
-    }
 }
