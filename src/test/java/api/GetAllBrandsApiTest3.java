@@ -9,7 +9,7 @@ import static org.hamcrest.Matchers.*;
 
 public class GetAllBrandsApiTest3 extends BaseApiTest {
 
-    @Test
+    @Test(description = " test 3: Verify that the API returns a list of all brands with correct structure and status code")
     public void getAllBrandsList() {
         given()
             .accept(ContentType.JSON)

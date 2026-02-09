@@ -9,7 +9,7 @@ import static org.hamcrest.Matchers.*;
 
 public class SearchProductApiTest5 extends BaseApiTest {
 
-    @Test
+    @Test(description = " test 5: Verify that the API allows searching for products and returns correct results with status code")
     public void searchProduct() {
         given()
             .contentType(ContentType.URLENC)

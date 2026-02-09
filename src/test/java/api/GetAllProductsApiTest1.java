@@ -9,7 +9,7 @@ import static org.hamcrest.Matchers.*;
 
 public class GetAllProductsApiTest1 extends BaseApiTest {
 
-    @Test
+    @Test(description = " test 1: Verify that the API returns a list of all products with correct structure and status code")
     public void getAllProductsList() {
         given()
             .accept(ContentType.JSON)

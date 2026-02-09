@@ -1,5 +1,6 @@
 package api;
 
+import base.BaseApiTest;
 import io.restassured.http.ContentType;
 import org.testng.annotations.Test;
 
@@ -8,24 +9,23 @@ import static org.hamcrest.Matchers.*;
 
 public class RegisterUserApiTest11 extends BaseApiTest {
 
-    @Test
+    @Test(description = " test 11: registers a new user and checks if the user is created successfully")
     public void registerUserAccount() {
-
-        ApiTestData.email = "luka" + System.currentTimeMillis() + "@test.com";
 
         given()
             .contentType(ContentType.URLENC)
             .formParam("name", "Luka")
-            .formParam("email", ApiTestData.email)
-            .formParam("password", ApiTestData.password)
+            .formParam("email", "luka1@test.com")
+            .formParam("password", "test12345678")
             .formParam("title", "Mr")
             .formParam("birth_date", "10")
             .formParam("birth_month", "May")
             .formParam("birth_year", "1998")
             .formParam("firstname", "Luka")
-            .formParam("lastname", "Test")
+            .formParam("lastname", "gachechiladze")
             .formParam("company", "QA")
             .formParam("address1", "Test Address")
+            .formParam("address2", "Test Address2")
             .formParam("country", "India")
             .formParam("zipcode", "12345")
             .formParam("state", "Test State")
@@ -34,7 +34,7 @@ public class RegisterUserApiTest11 extends BaseApiTest {
         .when()
             .post("/createAccount")
         .then()
-            .statusCode(200)
+            .statusCode(201)
             .body("message", containsString("User created"));
     }
 }
