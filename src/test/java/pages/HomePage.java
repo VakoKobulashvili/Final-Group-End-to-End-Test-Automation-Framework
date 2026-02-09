@@ -11,6 +11,8 @@ public class HomePage {
     private final By testCasesBtn = By.xpath("//a[contains(@href,'/test_cases')]");
     private final By productsBtn = By.xpath("//a[contains(@href,'/products')]");
     private final By cartBtn = By.xpath("//a[contains(@href,'/view_cart')]");
+    private final By signupLoginBtn = By.xpath("//a[contains(@href,'/login')]");
+    private final By contactUsBtn = By.xpath("//a[contains(@href,'/contact_us')]");
 
     private final By logo = By.xpath("//div[@class='logo pull-left']//a");
 
@@ -38,6 +40,15 @@ public class HomePage {
 
     public void clickCart() {
         wait.clickable(cartBtn).click();
+    }
+
+    public void clickSignupLogin() {
+        wait.clickable(signupLoginBtn).click();
+    }
+
+    public void clickContactUs() {
+        wait.clickable(contactUsBtn).click();
+        wait.waitUrlContains(driver, "contact_us");
     }
 
     public void scrollToFooter() {
