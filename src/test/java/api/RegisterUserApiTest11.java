@@ -10,7 +10,7 @@ public class RegisterUserApiTest extends BaseApiTest {
 
     @Test
     public void registerUserAccount() {
-        String email = "luka" + System.currentTimeMillis() + "@test.com";
+        String email = "luka@test.com";
 
         given()
             .contentType(ContentType.URLENC)
