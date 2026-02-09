@@ -12,11 +12,14 @@ public class RegisterUserApiTest11 extends BaseApiTest {
     @Test(description = " test 11: registers a new user and checks if the user is created successfully")
     public void registerUserAccount() {
 
+
+        createdUserEmail = "luka" + System.currentTimeMillis() + "@test.com";
+
         given()
             .contentType(ContentType.URLENC)
             .formParam("name", "Luka")
-            .formParam("email", "luka1@test.com")
-            .formParam("password", "test12345678")
+            .formParam("email", createdUserEmail)
+            .formParam("password", CREATED_USER_PASSWORD)
             .formParam("title", "Mr")
             .formParam("birth_date", "10")
             .formParam("birth_month", "May")
@@ -35,6 +38,6 @@ public class RegisterUserApiTest11 extends BaseApiTest {
             .post("/createAccount")
         .then()
             .statusCode(201)
-            .body("message", containsString("User created"));
+            .body(containsString("User created!"));
     }
 }

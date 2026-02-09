@@ -14,12 +14,13 @@ public class VerifyLoginApiTest7 extends BaseApiTest {
 
         given()
             .contentType(ContentType.URLENC)
-            .formParam("email", "luka1@test.com")
-            .formParam("password", "test12345678")
+
+            .formParam("email", createdUserEmail)
+            .formParam("password", CREATED_USER_PASSWORD)
         .when()
             .post("/verifyLogin")
         .then()
-            .statusCode(200)
-            .body("message", containsString("User exists"));
+                .statusCode(200)
+                .body(containsString("User exists!"));
     }
 }
