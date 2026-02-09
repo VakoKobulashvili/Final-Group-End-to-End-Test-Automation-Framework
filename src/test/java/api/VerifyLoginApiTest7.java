@@ -13,7 +13,7 @@ public class VerifyLoginApiTest7 extends BaseApiTest {
     public void verifyLoginValid() {
         given()
             .contentType(ContentType.URLENC)
-            .formParam("email", "test@test.com")
+            .formParam("email", "lukagachechiladze@ibsu.edu.ge")
             .formParam("password", "test123")
         .when()
             .post("/verifyLogin")
