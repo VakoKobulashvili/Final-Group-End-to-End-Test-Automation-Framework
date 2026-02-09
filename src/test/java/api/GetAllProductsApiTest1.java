@@ -6,7 +6,7 @@ import org.testng.annotations.Test;
 import static io.restassured.RestAssured.*;
 import static org.hamcrest.Matchers.*;
 
-public class GetAllProductsApiTest extends BaseApiTest {
+public class GetAllProductsApiTest1 extends BaseApiTest {
 
     @Test
     public void getAllProductsList() {
