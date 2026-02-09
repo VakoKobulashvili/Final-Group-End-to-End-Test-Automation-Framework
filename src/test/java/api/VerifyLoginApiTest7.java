@@ -1,6 +1,5 @@
 package api;
 
-import base.BaseApiTest;
 import io.restassured.http.ContentType;
 import org.testng.annotations.Test;
 
@@ -9,12 +8,13 @@ import static org.hamcrest.Matchers.*;
 
 public class VerifyLoginApiTest7 extends BaseApiTest {
 
-    @Test
+    @Test(dependsOnMethods = "api.RegisterUserApiTest.registerUserAccount")
     public void verifyLoginValid() {
+
         given()
             .contentType(ContentType.URLENC)
-            .formParam("email", "lukagachechiladze@ibsu.edu.ge")
-            .formParam("password", "test123")
+            .formParam("email", ApiTestData.email)
+            .formParam("password", ApiTestData.password)
         .when()
             .post("/verifyLogin")
         .then()
