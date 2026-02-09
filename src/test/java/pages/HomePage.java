@@ -9,8 +9,8 @@ public class HomePage {
     private final WaitUtils wait;
 
     private final By testCasesBtn = By.xpath("//a[contains(@href,'/test_cases')]");
-    private final By productsBtn  = By.xpath("//a[contains(@href,'/products')]");
-    private final By cartBtn      = By.xpath("//a[contains(@href,'/view_cart')]");
+    private final By productsBtn = By.xpath("//a[contains(@href,'/products')]");
+    private final By cartBtn = By.xpath("//a[contains(@href,'/view_cart')]");
 
     private final By logo = By.xpath("//div[@class='logo pull-left']//a");
 
