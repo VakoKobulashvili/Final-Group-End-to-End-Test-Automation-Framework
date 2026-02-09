@@ -9,11 +9,11 @@ public class ProductDetailPage {
     private final WaitUtils wait;
 
     private final By productName = By.cssSelector(".product-information h2");
-    private final By category    = By.xpath("//p[contains(text(),'Category:')]");
-    private final By price       = By.cssSelector(".product-information span span");
-    private final By availability= By.xpath("//b[text()='Availability:']");
-    private final By condition   = By.xpath("//b[text()='Condition:']");
-    private final By brand       = By.xpath("//b[text()='Brand:']");
+    private final By category = By.xpath("//p[contains(text(),'Category:')]");
+    private final By price = By.cssSelector(".product-information span span");
+    private final By availability = By.xpath("//b[text()='Availability:']");
+    private final By condition = By.xpath("//b[text()='Condition:']");
+    private final By brand = By.xpath("//b[text()='Brand:']");
 
     public ProductDetailPage(WebDriver driver) {
         this.driver = driver;
